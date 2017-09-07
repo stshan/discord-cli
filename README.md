@@ -1,7 +1,7 @@
 # discord-cli
 Minimalistic Command-Line Interface for Discord
 
-Master (Semi-Stable): [![Build Status](https://travis-ci.org/Rivalo/discord-cli.svg?branch=master)](https://travis-ci.org/Rivalo/discord-cli), Develop (Default Git Branch): [![Build Status](https://travis-ci.org/Rivalo/discord-cli.svg?branch=develop)](https://travis-ci.org/Rivalo/discord-cli)
+Master (Semi-Stable): [![Build Status](https://travis-ci.org/Rivalo/discord-cli.svg?branch=master)](https://travis-ci.org/Rivalo/discord-cli), Develop (Default Git Branch): [![Build Status](https://travis-ci.org/Rivalo/discord-cli.svg?branch=develop)](https://travis-ci.org/stshan/discord-cli)
 
 Join our Discord Chat! https://discord.gg/0pXWCo5RQbVuFHDM
 
@@ -12,7 +12,7 @@ Join our Discord Chat! https://discord.gg/0pXWCo5RQbVuFHDM
 ### How to Install the Master branch?
 Currently the easiest working way to install is to use the Go tools. I'm looking at using GCCGO and makefiles to reduce installation steps, and make setting PATHS unnecessary.
 * Install the Go Tools and setup the `$GOPATH` (There are loads of tutorial for this part)
-* `$ go get -u github.com/Rivalo/discord-cli`
+* `$ go get -u github.com/stshan/discord-cli`
 * Go to the `bin` folder inside your `$GOPATH`
 * `./discord-cli`
 
