@@ -12,7 +12,7 @@ import (
 //NewSession Creates a new Session
 func NewSession(Username, Password string) *Session {
 	Session := new(Session)
-	Session.Username = Username
+	Session.Username = Usernameœ
 	Session.Password = Password
 
 	return Session
@@ -32,7 +32,7 @@ func (Session *Session) Start() error {
 	dg.Open()
 
 	//Retrieve GuildID's from current User
-	UserGuilds, err := dg.UserGuilds()
+	UserGuilds, err := dg.UserGuilds(100, nil, nil)
 	if err != nil {
 		return err
 	}
@@ -113,7 +113,7 @@ func (Session *Session) NewState(GuildID string, MessageAmount int) (*State, err
 
 //Update updates the session, this reloads the Guild list
 func (Session *Session) Update() error {
-	UserGuilds, err := Session.DiscordGo.UserGuilds()
+	UserGuilds, err := Session.DiscordGo.UserGuilds(100,nil,nil)
 	if err != nil {
 		return err
 	}

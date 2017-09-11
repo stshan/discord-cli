@@ -21,5 +21,5 @@ type Session struct {
 	User      *discordgo.User
 	Password  string
 	DiscordGo *discordgo.Session
-	Guilds    []*discordgo.Guild
+	Guilds    []*discordgo.UserGuild
 }
