@@ -12,7 +12,7 @@ import (
 //NewSession Creates a new Session
 func NewSession(Username, Password string) *Session {
 	Session := new(Session)
-	Session.Username = Usernameœ
+	Session.Username = Username
 	Session.Password = Password
 
 	return Session
