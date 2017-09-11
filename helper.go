@@ -146,7 +146,7 @@ func ColorMatch(colorinput int) color.Attribute {
 	var ColorResult color.Attribute
 	Result = 10000
 
-	log.Println(colorinput)
+	//log.Println(colorinput)
 
 	var ANSIColors []HexColor
 	ANSIColors = append(ANSIColors, HexColor{color.FgRed, 255, 0, 0})
