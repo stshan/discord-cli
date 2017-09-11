@@ -3,7 +3,7 @@ package main
 import (
 	"strings"
 
-	"github.com/stshan/discordgo_cli"
+	"github.com/stshan/discordgo"
 )
 
 // This function will be called (due to AddHandler above) every time a new
