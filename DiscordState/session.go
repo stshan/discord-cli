@@ -32,7 +32,7 @@ func (Session *Session) Start() error {
 	dg.Open()
 
 	//Retrieve GuildID's from current User
-	UserGuilds, err := dg.UserGuilds(100, nil, nil)
+	UserGuilds, err := dg.UserGuilds(100, "", "")
 	if err != nil {
 		return err
 	}
@@ -113,7 +113,7 @@ func (Session *Session) NewState(GuildID string, MessageAmount int) (*State, err
 
 //Update updates the session, this reloads the Guild list
 func (Session *Session) Update() error {
-	UserGuilds, err := Session.DiscordGo.UserGuilds(100,nil,nil)
+	UserGuilds, err := Session.DiscordGo.UserGuilds(100,"","")
 	if err != nil {
 		return err
 	}
