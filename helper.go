@@ -84,7 +84,7 @@ func PrintMessages(Amount int) {
 
 			for _, Msg := range Messages {
 				//log.Printf("> %s > %s\n", UserName(m.Author.Username), Msg)
-				MessagePrint(m.Timestamp, m.Author.Username, Msg)
+				MessagePrint2(m, m.Author.Username, Msg)
 
 			}
 		}
@@ -111,9 +111,24 @@ func Notify(m *discordgo.Message) {
 }
 
 //MessagePrint prints one correctly formatted Message to stdout
-func MessagePrint(Time, Username, Content string) {
+func MessagePrint(Time *discordgo.MessageCreate, Username, Content string) {
 	var Color color.Attribute
-	TimeStamp, _ := time.Parse(time.RFC3339, Time)
+	TimeStamp, _ := time.Parse(time.RFC3339, string(Time.Timestamp))
+	LocalTime := TimeStamp.Local().Format("2006/01/02 15:04:05")
+	if val, ok := State.MemberRole[Username]; ok {
+		Color = ColorMatch(val.Color)
+	}
+	UserName := color.New(Color).SprintFunc()
+
+	log.SetFlags(0)
+	log.Printf("%s > %s > %s\n", LocalTime, UserName(Username), Content)
+	log.SetFlags(log.LstdFlags)
+}
+
+//MessagePrint prints one correctly formatted Message to stdout
+func MessagePrint2(Time *discordgo.Message, Username, Content string) {
+	var Color color.Attribute
+	TimeStamp, _ := time.Parse(time.RFC3339, string(Time.Timestamp))
 	LocalTime := TimeStamp.Local().Format("2006/01/02 15:04:05")
 	if val, ok := State.MemberRole[Username]; ok {
 		Color = ColorMatch(val.Color)

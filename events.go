@@ -27,7 +27,7 @@ func newMessage(s *discordgo.Session, m *discordgo.MessageCreate) {
 		Messages := ReceivingMessageParser(m.Message)
 
 		for _, Msg := range Messages {
-			MessagePrint(m.Timestamp, m.Author.Username, Msg)
+			MessagePrint(m, m.Author.Username, Msg)
 			//log.Printf("> %s > %s\n", UserName(m.Author.Username), Msg)
 		}
 	}
